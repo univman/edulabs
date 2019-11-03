@@ -8,6 +8,14 @@
       <%= link_to 'O mnie', home_about_path, class: 'nav-item active nav-link tooltips', title: '', data: { toggle: 'tooltip', placement: 'top', original_title: 'Znajdziesz tutaj info o mnie' } %>
       <%= link_to 'FAQ', home_faq_path, class: 'nav-item nav-link' %>
       <%= link_to 'Kontakt', home_contact_path, class: 'nav-item nav-link' %>
+      <% if user_signed_in? %>
+        <%= link_to 'Notatki', notes_path , class: 'nav-item nav-link' %>
+        <%= link_to 'Edycja profilu', edit_user_registration_path, class: 'nav-item nav-link' %>
+        <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+      <% else %>
+        <%= link_to 'Rejestracja', new_user_registration_path, class: 'nav-item nav-link' %>
+        <%= link_to 'Logowanie', new_user_session_path, class: 'nav-item nav-link' %>
+      <% end %>
       <span class="d-inline-block" data-toggle="popover" data-content="Na razie nie klykej">
       	<li class="nav-item">
         	<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
