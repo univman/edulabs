@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'Edu Lab', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <%= link_to 'O mnie', home_about_path, class: 'nav-item active nav-link tooltips', title: '', data: { toggle: 'tooltip', placement: 'top', original_title: 'Znajdziesz tutaj info o mnie' } %>
+      <%= link_to 'FAQ', home_faq_path, class: 'nav-item nav-link' %>
+      <%= link_to 'Kontakt', home_contact_path, class: 'nav-item nav-link' %>
+      <span class="d-inline-block" data-toggle="popover" data-content="Na razie nie klykej">
+      	<li class="nav-item">
+        	<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      	</li>
+      </span>
+    </ul>
+  </div>
+</nav>
