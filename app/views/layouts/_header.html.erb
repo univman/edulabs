@@ -10,7 +10,7 @@
       <%= link_to 'Kontakt', home_contact_path, class: 'nav-item nav-link' %>
       <% if user_signed_in? %>
         <%= link_to 'Notatki', notes_path , class: 'nav-item nav-link' %>
-        <%= link_to 'Edycja profilu', edit_user_registration_path, class: 'nav-item nav-link' %>
+        <%= link_to 'Profil', home_profile_path, class: 'nav-item nav-link' %>
         <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
       <% else %>
         <%= link_to 'Rejestracja', new_user_registration_path, class: 'nav-item nav-link' %>

@@ -2,8 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!#, except: [:index, :show] #wyjątek w uwierzytelnianiu dla stron index i show
-  before_action :correct_user, only: [:edit, :update, :destroy]
-
+  before_action :correct_user, only: [:edit, :update, :destroy, :show]
 
   # GET /notes
   # GET /notes.json
@@ -77,7 +76,7 @@ class NotesController < ApplicationController
     end
   def correct_user
     @note = current_user.notes.find_by(id: params[:id])
-    redirect_to notes_path, notice: "Nie jesteś uprawniony do edycji tej notatki" if @note.nil?
+    redirect_to notes_path, notice: "Nie posiadasz odpowiednich uprawnień" if @note.nil?
   end
 
 end
