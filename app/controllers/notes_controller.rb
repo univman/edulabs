@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!#, except: [:index, :show] #wyjątek w uwierzytelnianiu dla stron index i show
   before_action :correct_user, only: [:edit, :update, :destroy]
 
 
