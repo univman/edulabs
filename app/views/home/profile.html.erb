@@ -1,0 +1,7 @@
+<% if current_user.admin? %>
+	<h1>Witaj nauczycielu</h1>
+<% else %>
+	<h1>Witaj uczniu</h1>
+<% end %>
+
+<%= link_to 'Edycja profilu', edit_user_registration_path %>
