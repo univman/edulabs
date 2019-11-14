@@ -1,0 +1,31 @@
+@keyframes appear {
+  0% {
+    transform: translateX(-300px);
+  }
+  50%{
+    transform: translateY(-300px);
+    background-color: red;
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+.containerr {
+  display: flex;
+  justify-content :center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  color: white;
+  animation: appear 2s 1s both infinite alternate cubic-bezier(.76,.01,.17,1.01);
+}
+
+.box:hover {
+  animation-play-state: paused;
+}
